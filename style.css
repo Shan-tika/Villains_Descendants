@@ -1,0 +1,858 @@
+@font-face {
+  font-family: 'AmericanaTOT';
+  src: url('first_block_home_page/AmericanaTOT.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Anticva';
+  src: url('first_block_home_page/Anticva.otf') format('opentype');
+}
+@font-face {
+  font-family: 'ConstantineSecond';
+  src: url('second_block_home_page/Constantine.otf') format('opentype');
+}
+@font-face {
+  font-family: 'ConstantineThird';
+  src: url('third_block_home_page/Constantine.otf') format('opentype');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'AmericanaTOT', sans-serif;
+  color: #fff;
+  background: #000; /* оставляем чёрный фон для всего сайта */
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'AmericanaTOT', sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ==== ШАПКА ==== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.3cm; /* фиксированная высота */
+  background: rgba(1, 1, 1, 0.777);
+  display: flex;
+  align-items: center;
+  z-index: 1000; /* всегда поверх */
+}
+
+.header-inner {
+  width: 100%;
+  padding: 0 6cm 0 4cm; /* слева 4см, справа 6см */
+  display: flex;
+  justify-content: flex-end;
+  gap: 80px;
+  align-items: center;
+}
+
+.header-link,
+.header-icon {
+  font-family: 'Anticva', serif; 
+  font-size: 24px;
+  gap: 80px;
+  transition: 0.3s;
+}
+
+.header-link:hover {
+  text-shadow: 0 0 10px white;
+}
+
+.header-icon img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.header-icon:hover img {
+  filter: drop-shadow(0 0 8px white);
+}
+
+/* ==== ПЕРВЫЙ БЛОК ==== */
+.first-block {
+  height: 100vh;
+  background: url("first_block_home_page/фон.png") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4cm;
+  padding-top: 2.3cm;
+  text-align: center;
+  position: relative;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0
+}
+
+.coffins-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.coffin {
+  width: 80px;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* одинаковый промежуток между всеми элементами */
+  margin-top: 210px; /* можно подрегулировать, чтобы поднять/опустить весь блок */
+}
+
+.title-first {
+  font-family: 'AmericanaTOT', serif;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0;
+  transform: scaleY(1.2); /* растягиваем на 120% */
+  transform-origin: center; 
+}
+
+.subtitle-first {
+  font-family: 'AmericanaTOT', serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.3;
+  margin: 0;
+  transform: scaleY(1.2); /* растягиваем на 120% */
+  transform-origin: center; 
+}
+
+.start-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* одинаковое расстояние между линией и кнопкой */
+}
+
+.start-line {
+  width: 120px;
+}
+
+.start-btn {
+  font-family: 'Anticva';
+  font-size: 32px;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  text-shadow: 0 0 10px white;
+}
+
+/* ==== ВИНИЛ ==== */
+.vinyl {
+  position: fixed;
+  bottom: 300px;
+  left: -100px;   /* половина ширины в минус */
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  z-index: 900;
+}
+
+.vinyl img {
+  display: block;
+  width: 100%;
+  transform-origin: center center; 
+  animation: spin 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.vinyl.playing img {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ==== ВТОРОЙ БЛОК ==== */
+.second-block {
+  min-height: 100vh;
+background: url("second_block_home_page/фон.png") no-repeat center center / cover;
+  background-attachment: fixed; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-size: 32px;
+}
+
+.story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 80px 4cm;
+  background: #000000;
+}
+
+.story-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.story-image {
+  flex: 0 0 85%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.story-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.cap {
+  position: absolute;
+  color: white;
+  font-family: 'Anticva';
+  font-size: 25px;
+  white-space: nowrap; /* ← запрет переноса */
+  text-shadow: 0 0 6px rgba(255,255,255,0.8),
+               0 0 12px rgba(255,255,255,0.6);
+}
+
+.cap-top {
+  bottom: 160px;
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.cap-bottom {
+  bottom: 120px;
+  left: 55%;
+  transform: translateX(-50%);
+}
+
+.cap-one {
+  bottom: 100px;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+/* Вторая надпись */
+.cap-two {
+  bottom: 60px;
+  left: 130px;
+}
+
+/* Третья надпись */
+.cap-three {
+  bottom: 20px;
+  left: 220px;
+}
+
+.cap-skorbi-1 {
+  bottom: 90px;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+.cap-skorbi-2 {
+  bottom: 53px;
+  left: 300px;
+  transform: translateX(-50%);
+}
+
+.cap-skorbi-3 {
+  bottom: 15px;
+  right: 70px;
+  transform: translateX(-50%);
+}
+
+/* ЗДЕСЬ НАЧНЕТСЯ */
+.cap-start-1 {
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cap-start-2 {
+  bottom: 30px;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.story-caption p {
+  text-shadow: 0 0 6px rgba(255,255,255,0.8),
+               0 0 12px rgba(255,255,255,0.6);
+}
+
+.story-text {
+  flex: 0 0 40%;
+  max-width: 40%;
+  font-family: 'Constantine';
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+  text-align: justify;
+  margin-top: 0px; 
+background: none;
+}
+
+.story-text.right {
+  text-align: right;
+}
+
+.story-text.left {
+  text-align: left;
+}
+
+.story-button {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.btn-more {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Anticva';
+  font-size: 28px;  /* размер кнопки (изображения) */
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-more img {
+  display: block;
+  max-width: 260px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-more span {
+  font-size: 16px;          /* уменьшенный размер текста */
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-more:hover {
+  opacity: 0.6;
+}
+
+/* ===== СТИЛИ ДЛЯ ТРЕТЬЕГО БЛОКА ===== */
+@font-face {
+  font-family: "Anticva";
+  src: url("third_block_home_page/Anticva.otf");
+}
+@font-face {
+  font-family: "Gangitem";
+  src: url("third_block_home_page/Gangitem.otf");
+}
+@font-face {
+  font-family: "Constantine";
+  src: url("third_block_home_page/Constantine.otf");
+}
+
+.third-block {
+  background: url("third_block_home_page/фон 3.png") no-repeat center center;
+  background-size: auto 120%;
+  position: relative;
+  padding: 0 0 180px; /* убраны боковые отступы */
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.title {
+  font-family: "Anticva", serif;
+  font-size: 40px;
+  font-weight: normal;
+  text-shadow: 0 0 10px white;
+  margin-bottom: 15px;
+  transform: scaleY(1.2); /* вытяжка по вертикали */
+  transform-origin: center;
+}
+
+.subtitle {
+  font-family: "Anticva", serif;
+  font-size: 20px;
+  display: flex;
+  transform: none;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 100px;
+}
+
+.subtitle .line {
+  height: 5px;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  max-width: 1000px;
+}
+
+.background-card {
+  width: 92%;
+  display: block;
+}
+
+.character {
+  position: absolute;
+  left: -70px;
+  bottom: -200px;
+  width: 420px; /* Одинаковая ширина для всех */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card-text {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  text-align: left;
+  color: white;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty {
+  font-family: "Gangitem", serif;
+  font-size: 48px;
+  transform: scaleY(1.2);
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-style: normal;
+  top: 150px;
+  left: 300px;
+  margin-bottom: 20px;
+  margin-top: -10px; /* поднимет выше */
+}
+
+.description-small {
+  font-family: "Constantine", serif;
+  transform: scaleY(1.2);
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.description-big {
+  font-family: "Constantine", serif;
+  transform: scaleY(1.2);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.button-box {
+  position: absolute;
+  bottom: 100px;
+  left: -100px;
+  width: 180px;
+  display: inline-block;
+  position: relative;
+}
+
+/* Плавные переходы для всех элементов */
+.button-bg, .button-icon, .button-text {
+  transition: filter 0.3s ease, color 0.3s ease;
+}
+
+/* Эффект при наведении: затемнение всех элементов */
+.button-box:hover .button-bg,
+.button-box:hover .button-icon,
+.button-box:hover .button-text {
+  filter: brightness(0.6);
+}
+
+/* Текст остаётся читаемым — можно добавить лёгкий оттенок */
+.button-box:hover .button-text {
+  color: #222; /* чуть темнее, если нужно */
+}
+
+.button-bg {
+  width: 160px;
+  display: block;
+}
+
+.button-icon {
+  position: absolute;
+  top: 40%;
+  left: -30px;
+  width: 65px;
+  height: 60px; /* добавь это */
+  object-fit: contain; /* или 'cover' если нужно обрезать */
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.button-text {
+  position: absolute;
+  top: 55%;
+  left: 35px;
+  transform: translateY(-50%);
+  font-family: "Anticva", serif;
+  font-size: 13px;
+  color: black;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.herbs {
+  position: absolute;
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  bottom: 5px;
+  left: 65%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.herbs img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+.herbs img:hover {
+  filter: brightness(70%);
+}
+
+
+/* ===== ЧЕТВЁРТЫЙ БЛОК ===== */
+.fourth-block {
+  background-color: black;
+  padding: 60px 20px 120px;
+  color: white;
+  text-align: center;
+}
+
+.fourth-block .title {
+  font-family: "Anticva", serif;
+  font-size: 40px;
+  font-weight: normal;
+  transform: scaleY(1.2);
+  text-shadow: 0 0 10px white;
+  margin: 0 0 15px;
+}
+
+.fourth-block .subtitle {
+  font-family: "Anticva", serif;
+  font-size: 24px;
+  font-weight: normal;          /* убираем жирность */
+  transform: none;              /* убираем вытягивание */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 80px;
+}
+
+.fourth-block .line {
+  height: 5px;
+}
+
+.icon-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.icon-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icon-wrapper {
+  position: relative;
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-img {
+  width: 180px; 
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+.icon-label {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
+.icon-wrapper:hover .icon-img {
+  filter: brightness(1.2) drop-shadow(0 0 10px white);
+}
+
+.icon-wrapper:hover .icon-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.fifth-block {
+  position: relative;
+  width: 100%;
+  /* min-height: 100vh; — удалить или уменьшить */
+  min-height: 600px; /* например */
+  text-align: center;
+  padding-bottom: 0; /* или положительное значение */
+  overflow: hidden;
+}
+
+/* Цветы */
+.fifth-flowers {
+  position: absolute;
+  top: 600px;
+  left: 50%;
+ margin-top:-650px;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Герой блок */
+.fifth-hero {
+  position: relative;
+  z-index: 1;
+  margin-top: -150px;
+}
+
+/* Заголовок */
+.fifth-title {
+  font-family: "Anticva", serif;
+  font-size: 42px;
+  font-weight: normal;
+  transform: scaleY(1.15);
+  margin-top:-250px;
+  margin-bottom: 100px;
+  color: #883a3a;
+  text-shadow: none;
+}
+
+/* Подзаголовок */
+.fifth-subtitle {
+  font-family: "Anticva", serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top:-70px;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  color: #883a3a;
+}
+
+/* Кнопки */
+.fifth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 080px;
+}
+
+.fifth-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fifth-button .button-img {
+  display: block;
+  width: 380px;
+  transition: filter 0.3s ease;
+}
+
+.fifth-button .button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1.05);
+  font-family: "Anticva", serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: #ffffff;
+  transition: filter 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+.fifth-button:hover .button-img,
+.fifth-button:hover .button-text {
+  filter: brightness(0.6);
+  color: #222;
+}
+
+/* Колонки */
+.fifth-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 60px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.column {
+  text-align: left;
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.column-title {
+  font-family: "Anticva", serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #883a3a;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  font-family: "Anticva", serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  color: #f0f0f0;
+}
+
+.column li:hover {
+  color: #883a3a;
+  transform: translateX(4px);
+}
+
+.help-row {
+  display: flex;
+  align-items: center;    /* 🔹 по центру по вертикали */
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.coffin-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* "Создатель" как <li> с эффектом и выравниванием */
+.creator-text {
+  font-family: "Anticva", serif;
+  font-size: 14px;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  line-height: 1; /* 🔹 строгое выравнивание по центру */
+}
+
+.creator-text:hover {
+  color: #883a3a;
+  transform: translateX(4px);
+}
+
+/* Красная кнопка "ЛС группы" */
+.group-message-button {
+  background-color: #883a3a;
+  color: #ffffff;
+  font-family: "Anticva", serif;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.group-message-button:hover {
+  background-color: #aa4c4c;
+}
