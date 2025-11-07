@@ -856,3 +856,263 @@ background: none;
 .group-message-button:hover {
   background-color: #aa4c4c;
 }
+
+/* ===============================
+   📱 АДАПТИВ ПОД ТЕЛЕФОН
+   =============================== */
+@media (max-width: 768px) {
+
+  /* --- Шапка --- */
+  .site-header {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .header-inner {
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: space-around;
+  }
+
+  .header-link {
+    font-size: 14px;
+  }
+
+  .header-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* --- Первый блок --- */
+  .first-block {
+    padding: 0 20px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .title-first {
+    font-size: 28px;
+  }
+
+  .subtitle-first {
+    font-size: 16px;
+  }
+
+  .coffin {
+    width: 40px;
+  }
+
+  .start-line {
+    width: 60px;
+  }
+
+  .start-btn {
+    font-size: 18px;
+  }
+
+  /* --- Винил --- */
+  .vinyl {
+    bottom: 100px;
+    left: -70px;
+    width: 120px;
+    height: 120px;
+  }
+
+  /* --- Второй блок --- */
+  .story-block {
+    padding: 40px 20px;
+    gap: 60px;
+  }
+
+  .story-section {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .story-image,
+  .story-text {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .story-caption p {
+    font-size: 16px;
+  }
+
+  .story-text {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .btn-more img {
+    max-width: 180px;
+  }
+
+  .btn-more span {
+    font-size: 12px;
+  }
+
+  /* --- Третий блок --- */
+  .third-block {
+    background-size: cover;
+    padding-bottom: 80px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .character {
+    position: relative;
+    width: 250px;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .card-text {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .faculty {
+    font-size: 28px;
+  }
+
+  .description-small,
+  .description-big {
+    font-size: 13px;
+  }
+
+  .button-box {
+    position: static;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .herbs {
+    position: static;
+    justify-content: center;
+  }
+
+  /* --- Четвёртый блок --- */
+  .icon-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .icon-img {
+    width: 120px;
+  }
+
+  /* --- Пятый блок --- */
+  .fifth-block-bg {
+    display: none;
+  }
+
+  .fifth-hero {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .fifth-title {
+    font-size: 24px;
+  }
+
+  .fifth-subtitle {
+    font-size: 16px;
+  }
+
+  .fifth-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .column {
+    width: 100%;
+    text-align: center;
+  }
+
+  .fifth-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ===============================
+   💻 АДАПТИВ ПОД ПЛАНШЕТ
+   =============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .header-inner {
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .header-link {
+    font-size: 18px;
+  }
+
+  .title-first {
+    font-size: 40px;
+  }
+
+  .subtitle-first {
+    font-size: 20px;
+  }
+
+  .story-block {
+    padding: 60px 40px;
+  }
+
+  .story-section {
+    flex-direction: column;
+  }
+
+  .story-text {
+    max-width: 90%;
+    font-size: 16px;
+  }
+
+  .third-block {
+    background-size: cover;
+  }
+
+  .character {
+    width: 320px;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  .card-text {
+    position: static;
+    text-align: center;
+  }
+
+  .herbs {
+    justify-content: center;
+  }
+
+  .icon-img {
+    width: 140px;
+  }
+
+  .fifth-block-bg {
+    opacity: 0.3;
+  }
+}
