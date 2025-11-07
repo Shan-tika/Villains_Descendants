@@ -203,8 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = data[id];
 
         // Обновляем фон, подкладку, мини-герб
-        background.style.backgroundImage = `url('third_block_home_page2/${item.background}')`;
-        cardBackground.src = `third_block_home_page1/${item.cardBg}`;
+        background.style.backgroundImage = `url('third_block_home_page/${item.background}')`;
+        cardBackground.src = `third_block_home_page/${item.cardBg}`;
         miniHerb.src = `third_block_home_page/${item.miniHerb}`;
 
 // По умолчанию
@@ -352,3 +352,4 @@ document.addEventListener('mousemove', e => {
   }
 
 });
+
